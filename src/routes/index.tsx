@@ -78,16 +78,23 @@ function Index() {
 
         {stage === "quiz" && (
           <>
-            <div className="mb-8">
-              <div className="mb-2 flex items-center justify-between text-sm font-medium text-white/90">
-                <span>Question {index + 1} of {total}</span>
-                <span>{Math.round(progress)}%</span>
-              </div>
-              <div className="h-3 w-full overflow-hidden rounded-full bg-white/20 backdrop-blur">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-yellow-300 to-pink-200 transition-all duration-500"
-                  style={{ width: `${progress}%` }}
-                />
+            <div className="mb-8 flex items-center gap-3">
+              <img
+                src={(index % 2 === 0 ? avatar1 : avatar2).url}
+                alt=""
+                className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-white/60 shadow-lg"
+              />
+              <div className="flex-1">
+                <div className="mb-2 flex items-center justify-between text-sm font-medium text-white/90">
+                  <span>Question {index + 1} of {total}</span>
+                  <span>{Math.round(progress)}%</span>
+                </div>
+                <div className="h-3 w-full overflow-hidden rounded-full bg-white/20 backdrop-blur">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-yellow-300 to-pink-200 transition-all duration-500"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
               </div>
             </div>
 
