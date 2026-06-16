@@ -1,6 +1,13 @@
 // Questions data. Each object has: id, text, type ("choice" | "text"), and optional `options` for choice type.
 // Edit freely — add `options: ["A", "B", "C"]` to any question to turn it into multiple choice.
-export const questions = [
+export type Question = {
+  id: number;
+  text: string;
+  type: "choice" | "text";
+  options?: string[];
+};
+
+export const questions: Question[] = [
   { id: 1, text: "What's the most spontaneous thing you've ever done?", type: "text" },
   { id: 2, text: "What's your go-to comfort food?", type: "choice", options: ["Pizza 🍕", "Ice cream 🍦", "Pasta 🍝", "Something else"] },
   { id: 3, text: "If you could travel anywhere tomorrow, where would you go?", type: "text" },
